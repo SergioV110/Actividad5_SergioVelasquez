@@ -57,6 +57,9 @@ namespace GestionDeVentasyDetallesDeVentas.VISTAS.VentasVistas
         private void buttonSeleccionar_Click(object sender, EventArgs e)
         {
             DetalleVentaInsertarVista.IdVentaSeleccionada = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            DetalleVentaEditarVista.IdVentaSeleccionada = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+
         }
     }
 }

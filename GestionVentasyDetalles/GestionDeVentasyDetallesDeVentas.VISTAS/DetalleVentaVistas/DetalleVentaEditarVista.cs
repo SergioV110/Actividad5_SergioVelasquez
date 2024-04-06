@@ -27,8 +27,8 @@ namespace GestionDeVentasyDetallesDeVentas.VISTAS.DetalleVentaVistas
             InitializeComponent();
         }
 
-        public static int IdProductoSeleccionado { get; internal set; }
-        public int IdVentaSeleccionada = 0;
+        public static int IdProductoSeleccionado = 0;
+        public static int IdVentaSeleccionada = 0;
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
@@ -52,7 +52,7 @@ namespace GestionDeVentasyDetallesDeVentas.VISTAS.DetalleVentaVistas
             textBox5.Text = Convert.ToString(detalleVenta.TotalDetalle);
         }
 
-        private void buttonSeleccionarIdVenta_Click(object sender, EventArgs e)
+        public void buttonSeleccionarIdVenta_Click(object sender, EventArgs e)
         {
             VentasListarVista fr = new VentasListarVista();
             if (fr.ShowDialog() == DialogResult.OK)
@@ -62,11 +62,12 @@ namespace GestionDeVentasyDetallesDeVentas.VISTAS.DetalleVentaVistas
             }
         }
 
-        private void buttonSeleccionarIdProducto_Click(object sender, EventArgs e)
+        public void buttonSeleccionarIdProducto_Click(object sender, EventArgs e)
         {
             ProductosListarVista fr = new ProductosListarVista();
             if (fr.ShowDialog() == DialogResult.OK)
             {
+                
                 Productos productos = bssproductos.ObtenerProductoIdBss(IdProductoSeleccionado);
                 textBox2.Text = productos.NombreProducto;
             }
